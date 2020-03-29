@@ -10,6 +10,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: Install dependencies
+          command: |
+            gem install bundler -v 2.1.4
+            bundle check --path vendor/bundle || bundle install --deployment
+      - run
+          name: Setup application
+          command: |
+            export PATH=$PATH:"$(PWD)/bin"
+            chmod +x ./vendra
+            vendra setup
+      - run
+          name: Run rspec
+          command: bundle exec rspec
+      - store_test_results:
+          path: test_results
