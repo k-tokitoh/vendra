@@ -14,13 +14,13 @@ jobs:
           command: |
             gem install bundler -v 2.1.4
             bundle check --path vendor/bundle || bundle install --deployment
-      - run
+      - run:
           name: Setup application
           command: |
             export PATH=$PATH:"$(PWD)/bin"
             chmod +x ./vendra
             vendra setup
-      - run
+      - run:
           name: Run rspec
           command: bundle exec rspec
       - store_test_results:
