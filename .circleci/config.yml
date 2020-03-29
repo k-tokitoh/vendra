@@ -18,7 +18,7 @@ jobs:
           name: Setup application
           command: |
             export PATH=$PATH:"$(PWD)/bin"
-            chmod +x ./vendra
+            chmod +x ./bin/vendra
             vendra setup
       - run:
           name: Run rspec
