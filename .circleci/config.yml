@@ -13,7 +13,7 @@ jobs:
           name: Install dependencies
           command: |
             gem install bundler -v 2.1.4
-            bundle check --path vendor/bundle || bundle install --deployment
+            bundle check --path vendor/bundle || bundle install --deployment --with test
       - run:
           name: Setup application
           command: |
