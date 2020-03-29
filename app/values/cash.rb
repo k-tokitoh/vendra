@@ -2,20 +2,19 @@ class Cash
   # ちょうどX円をつくれるか？みたいなメソッド
 
   def initialize
-    @cash_units = []
+    @cash_pieces = []
   end
 
-  def add(cash_unit)
-    @cash_units << cash_unit
+  def add(cash_piece)
+    @cash_pieces << cash_piece
   end
 
   def amount
-    @cash_units.sum(&:value)
-    # @money_units.sum...でいけるか？ブロックわたせるんだっけか？
+    @cash_pieces.sum(&:value)
   end
 
   # delegateで書く
   def clear
-    @cash_units.clear
+    @cash_pieces.clear
   end
 end

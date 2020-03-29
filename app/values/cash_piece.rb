@@ -1,4 +1,4 @@
-class CashUnit
+class CashPiece
   AVAILABLE_VALUES = [10, 50, 100, 500, 1000]
 
   class << self

@@ -11,8 +11,8 @@ class VendingMachine
     # @sales = Cash.new
   end
 
-  def add_deposit(cash_unit)
-    @deposit.add(cash_unit)
+  def add_deposit(cash_piece)
+    @deposit.add(cash_piece)
   end
 
   def deposit_amount
