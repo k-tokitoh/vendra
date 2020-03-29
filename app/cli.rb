@@ -6,7 +6,7 @@ class CLI < Thor
 
   desc "insert VALUE_OF_COIN_OR_BILL", "Insert coin/bill to the vending machine."
   def insert(cash_unit_value)
-    InsertCash.new.call(cash_unit_value)
+    Insert.new.call(cash_unit_value)
   end
 
   desc "refund", "Refund deposit."

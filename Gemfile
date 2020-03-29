@@ -13,4 +13,5 @@ end
 
 group :test, optional: true do
   gem "rspec"
+  gem "aruba"
 end
