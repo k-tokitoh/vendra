@@ -13,5 +13,7 @@ class Loader
     @loader.inflector.inflect("cli" => "CLI")
 
     @loader.setup
+
+    Dir[File.expand_path('../../lib/core_ext/*.rb', __FILE__)].each { |file| require file }
   end
 end

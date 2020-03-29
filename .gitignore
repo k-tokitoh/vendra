@@ -1,3 +1,5 @@
 /.bundle/*
 /vendor/*
 .ruby-version
+/db/*.sqlite3
+/tmp/

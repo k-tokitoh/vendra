@@ -9,6 +9,7 @@ class CLI
 
     private
 
+    # TODO: libに移動したい。（ユースケース層がやることでも、特定のモデルのプレゼンテータ層がやることでもない。app/helpersでもいいが、このappに特有でもないのでlibがベターか。）
     def format(column_names, beverages)
       column_widths = column_widths(column_names, beverages)
       partition = partition(column_widths)

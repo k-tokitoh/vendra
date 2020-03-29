@@ -3,10 +3,7 @@ require 'singleton'
 class VendingMachine
   include Singleton
 
-  attr_reader :beverages
-
   def initialize
-    @beverages = [Beverage.new(:cola, 120, 5)]
     @deposit = Cash.new
     # @sales = Cash.new
   end
@@ -23,5 +20,9 @@ class VendingMachine
     amount = @deposit.amount
     @deposit.clear
     amount
+  end
+
+  def beverages
+    Beverage.all
   end
 end
