@@ -3,11 +3,10 @@
 require_relative "../../lib/vendra/cli"
 
 RSpec.describe Vendra::CLI do
-  it "has a version number" do
-    expect(Vendra::VERSION).not_to be nil
-  end
-
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe "example" do
+    it "outputs that command is called" do
+      output = capture(:stdout) { described_class.start(%w[example]) }
+      expect(output).to include "command called."
+    end
   end
 end
