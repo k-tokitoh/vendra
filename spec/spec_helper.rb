@@ -13,6 +13,10 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
+  config.before(:each) do
+    File.delete(Vendra.store_path) if File.exist?(Vendra.store_path)
+  end
+
   def capture(stream)
     begin
       stream = stream.to_s

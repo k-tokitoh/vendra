@@ -27,14 +27,17 @@ class Deposit
     @repository = repository
   end
 
-  def insert(value)
-    cache_piece = CachePiece.new(value)
+  def insert(cache_piece)
     cache_pieces << cache_piece
     update
   end
 
   def update
     repository.update(self)
+  end
+
+  def total
+    cache_pieces.map(&:value).sum
   end
 
   private

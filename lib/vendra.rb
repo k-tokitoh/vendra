@@ -13,4 +13,9 @@ module Vendra
       deposit: YamlDepositRepository
     }
   end
+
+  # TODO: remove.
+  def self.store_path
+    "#{Dir.home}/.vendra/store.yml"
+  end
 end
