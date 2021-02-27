@@ -4,6 +4,10 @@ class Deposit
       @instance ||= (find || create)
     end
 
+    def repository
+      @repository ||= Vendra.repositories[:deposit]
+    end
+
     private
 
     def find
@@ -11,21 +15,13 @@ class Deposit
     end
 
     def create
-      deposit = new(repository)
+      deposit = new
       deposit.cash_pieces = []
       repository.insert(deposit)
-    end
-
-    def repository
-      @repository ||= Vendra.repositories[:deposit]
     end
   end
 
   attr_accessor :cash_pieces
-
-  def initialize(repository)
-    @repository = repository
-  end
 
   def insert(cash_piece)
     cash_pieces << cash_piece
@@ -33,14 +29,10 @@ class Deposit
   end
 
   def update
-    repository.update(self)
+    self.class.repository.update(self)
   end
 
   def total
     cash_pieces.map(&:value).sum
   end
-
-  private
-
-  attr_reader :repository
 end
