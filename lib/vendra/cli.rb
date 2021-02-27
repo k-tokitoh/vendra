@@ -1,15 +1,20 @@
 # frozen_string_literal: true
 
 require "thor"
+require_relative "../vendra"
 
-module Vendra
-  class CLI < Thor
-    include Thor::Actions
+class Vendra::CLI < Thor
+  include Thor::Actions
 
-    desc "this is summary.", "this is detailed description."
-    def example
-      p "command called."
-      create_file "~/.vendra/example.conf", "your vendra config"
-    end
+  desc "example", "An example command."
+  def example
+    p "command called."
+    create_file "~/.vendra/example.conf", "your vendra config"
+  end
+
+  desc "insert CACHE_VALUE", "Insert a coin or a bill."
+  def insert(value)
+    cache_piece = CachePiece.new(value)
+    Deposit.instance.insert(cache_piece)
   end
 end
