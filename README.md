@@ -1,8 +1,8 @@
 # Vendra
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/vendra`. To experiment with that code, run `bin/console` for an interactive prompt.
+Vendra is a CLI imitating a vendor machine.
 
-TODO: Delete this and the text above, and describe your gem
+It's just a personal practice to create gems etc., inspired by [a workshop problem](http://devtesting.jp/tddbc/?TDDBC%E5%A4%A7%E9%98%AA2.0%2F%E8%AA%B2%E9%A1%8C).
 
 ## Installation
 
@@ -22,7 +22,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+$ vendra help
+Commands:
+  vendra example             # An example command.
+  vendra help [COMMAND]      # Describe available commands or one specific command
+  vendra insert CACHE_VALUE  # Insert a coin or a bill.
+```
 
 ## Development
 
@@ -32,7 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/vendra.
+Bug reports and pull requests are welcome on GitHub at https://github.com/k-tokitoh/vendra.
 
 ## License
 
