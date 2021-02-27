@@ -26,7 +26,7 @@ Or install it yourself as:
 $ vendra help
 Commands:
   vendra help [COMMAND]      # Describe available commands or one specific command
-  vendra insert CACHE_VALUE  # Insert a coin or a bill.
+  vendra insert CASH_VALUE  # Insert a coin or a bill.
 ```
 
 ## Development

@@ -12,7 +12,7 @@ class Deposit
 
     def create
       deposit = new(repository)
-      deposit.cache_pieces = []
+      deposit.cash_pieces = []
       repository.insert(deposit)
     end
 
@@ -21,14 +21,14 @@ class Deposit
     end
   end
 
-  attr_accessor :cache_pieces
+  attr_accessor :cash_pieces
 
   def initialize(repository)
     @repository = repository
   end
 
-  def insert(cache_piece)
-    cache_pieces << cache_piece
+  def insert(cash_piece)
+    cash_pieces << cash_piece
     update
   end
 
@@ -37,7 +37,7 @@ class Deposit
   end
 
   def total
-    cache_pieces.map(&:value).sum
+    cash_pieces.map(&:value).sum
   end
 
   private
