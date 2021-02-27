@@ -1,15 +1,11 @@
 module Vendra
-  class DepositRepository
+  class BeverageRepository
     class << self
-      def insert(deposit)
+      def store_exists?
         raise NotImplementedError
       end
 
-      def find
-        raise NotImplementedError
-      end
-
-      def update(deposit)
+      def insert(beverage)
         raise NotImplementedError
       end
     end
